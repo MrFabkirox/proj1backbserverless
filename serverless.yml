@@ -1,0 +1,18 @@
+service: lambda-test
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+functions:
+  page1:
+    handler: handler.page1
+    events:
+      - http:
+          path: /
+          method: get
+  page2:
+    handler: handler.page2
+    events:
+      - http:
+          path: /page2
+          method: get
